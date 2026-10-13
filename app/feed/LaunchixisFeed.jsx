@@ -1,7 +1,7 @@
 "use client";
 import { useMemo } from "react";
-import { createFeedClient } from "@/feed-client/api";
-import { FeedView } from "@/feed-client/FeedView";
+import { createFeedClient } from "../../feed-client/api.ts";
+import { FeedView } from "../../feed-client/FeedView.tsx";
 
 // Launchixis skin: only Launchixis's own classes from app/globals.css (card, btn, pill, lede…). Layout in ./feed.css.
 /** @type {import("@/feed-client/FeedView").FeedSkin} */

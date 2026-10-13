@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { currentUser } from "@/lib/server-auth.js";
-import { apixisSubOf } from "@/lib/apixis-login";
+import { currentUser } from "../../../lib/server-auth.js";
+import { apixisSubOf } from "../../../lib/apixis-login.ts";
 
 export const dynamic = "force-dynamic";
 

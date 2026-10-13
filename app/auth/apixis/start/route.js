@@ -1,3 +1,3 @@
-import { startApixisLogin } from "@/lib/apixis-login";
+import { startApixisLogin } from "../../../../lib/apixis-login.ts";
 
 export const GET = startApixisLogin;

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SignInWithApixis } from "@/components/SignInWithApixis";
+import { SignInWithApixis } from "../../components/SignInWithApixis.tsx";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");

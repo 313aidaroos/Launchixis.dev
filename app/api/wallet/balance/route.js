@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { createServerClient } from "@supabase/ssr";
-import { buyIxisUrl, walletBalance, WalletError } from "@/lib/apixis-wallet";
-import { apixisSubOf } from "@/lib/apixis-login";
+import { buyIxisUrl, walletBalance, WalletError } from "../../../../lib/apixis-wallet.ts";
+import { apixisSubOf } from "../../../../lib/apixis-login.ts";
 
 export const dynamic = "force-dynamic";
 
