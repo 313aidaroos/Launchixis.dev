@@ -74,4 +74,4 @@ Owner requested the assessment improvements and merge. Added a private admin ope
 - Changed: AI Receptionist section in the family notes (see `docs/AI_RECEPTIONIST.md` in ApixisWallet); notes only, no code.
 - Why: Awad approved an AI Receptionist add-on at $100/month for every customer-facing family site and asked every bot and agent to follow one plan.
 - 2026-10-14 — Grok (Launchixis Lead) via CloudAgent: launch readiness doc for 2027-01-01 (branch grok/launch-readiness-2027-01-01). Docs only.
-- 2026-10-14 Grok (Launchixis Lead): Footer 'Other Ixis companies' (13 links, all HTTP 200 on 10-14; Recovra omitted: recovra-three.vercel.app returns 404) + nav icons SVG→text glyphs (no-SVG lock) (branch grok/footer-ixis-companies-no-svg)
+- 2026-10-14 — Grok (Launchixis Lead) via CloudAgent: Footer 'Other Ixis companies' (13 links re-checked HTTP 200 on 10-14; Recovra omitted because recovra-three.vercel.app returns 404) and nav icons SVG→text glyphs (branch grok/footer-ixis-companies-no-svg).

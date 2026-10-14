@@ -144,5 +144,6 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 
 ## 2026-10-14 (CT) — Grok (Launchixis Lead): Footer 'Other Ixis companies' (13 links, all HTTP 200 on 10-14; Recovra omitted: recovra-three.vercel.app returns 404) + nav icons SVG→text glyphs (no-SVG lock)
 - What/where: components/StudioShell.jsx, app/studio.css; the 9 inline <svg> on /companies were the StudioShell nav icons
-- Who: Grok (Launchixis Lead), for Awad via hub bot.
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Link re-check 2026-10-14: all 13 footer URLs returned HTTP 200. Recovra (`https://recovra-three.vercel.app`) still returns 404 and stays omitted. No other dead links to drop.
 - Undo: `git revert` the squash commit of branch `grok/footer-ixis-companies-no-svg`.
