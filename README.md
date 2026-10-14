@@ -58,3 +58,11 @@ For a manual browser review with fake local accounts after building: `node tests
 - Field saves carry a version number. A 409 means another session changed the record; review/reload and reapply your edits.
 - Rate limiting is stored in Supabase and shared across server instances. If it is unavailable, protected costly/public write routes return 503.
 - Roll back application code using the previous Vercel deployment if necessary. The database migration is additive and can remain in place. Rolling back to the old app re-exposes the old public board, so prefer a forward fix for privacy issues.
+
+## Checks
+
+`npm run check` runs lint, typecheck, unit + SQL tests, build and integration tests (Node >= 22.18).
+
+## Payments (rules)
+
+New accounts only through Apixis ID (Wallet SSO); existing email accounts may use a magic link; no password signup. Customers pay by card or with Ixis. Ixis purchases use the shared Apixis Wallet (reserve → capture). Card checkout uses one Stripe account (Apixis Dev LLC), one price per product, and stays off until `STRIPE_PRICE_LAUNCHIXIS_CHECKLIST` (and the other `STRIPE_PRICE_LAUNCHIXIS_*` names), a Stripe key, and `STRIPE_WEBHOOK_SECRET` are set. No Launchixis card prices are set yet.
