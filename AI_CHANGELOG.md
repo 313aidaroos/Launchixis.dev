@@ -76,3 +76,11 @@ Owner requested the assessment improvements and merge. Added a private admin ope
 - 2026-10-14 — Grok (Launchixis Lead) via CloudAgent: launch readiness doc for 2027-01-01 (branch grok/launch-readiness-2027-01-01). Docs only.
 - 2026-10-14 — Grok (Launchixis Lead) via CloudAgent: Footer 'Other Ixis companies' (13 links re-checked HTTP 200 on 10-14; Recovra omitted because recovra-three.vercel.app returns 404) and nav icons SVG→text glyphs (branch grok/footer-ixis-companies-no-svg).
 - 2026-10-14 — Grok (Launchixis Lead) via CloudAgent: remove archive/landing-pack.html and expand the README with checks and payment rules (branch grok/cleanups-claude-list).
+
+## 2026-10-14 — Grok (Launchixis Lead) via CloudAgent
+- Changed: card-or-Ixis checkout (`/api/checkout`, signature-checked `/api/stripe/webhook`, `purchase_ledger`, pricing card buttons). `lib/steps.js` and `lib/cixy.js` now describe card or Ixis.
+- Why: customers choose card (one Apixis Dev LLC Stripe account, one price per sku) or Ixis. Card buttons stay off until price env vars are set. Every purchase records a receipt and a permanent ledger row. Branch `grok/card-or-ixis-checkout`.
+
+## 2026-10-14 — Grok (Launchixis Lead) via CloudAgent
+- Changed: combined footer, cleanups, and card-or-Ixis onto `grok/launch-prep-combined` (supersedes #32, #33, and #34).
+- Why: those three branches conflicted with main after #31 merged. One branch keeps every note, changelog entry, and the README payment section. Migration not applied. Env not changed.
