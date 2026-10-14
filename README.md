@@ -38,7 +38,7 @@ For a fresh database, apply `scripts/schema.sql`, then every file in `supabase/m
 
 ## Purchase guarantees
 
-The shared Wallet is the source of truth for balance and entitlement. Launchixis stores no local Ixis balance. The deliverable is persisted before capture. A partial unique index gives each customer only one pending/captured checklist order. Concurrent requests reuse it and the same Wallet idempotency key. A lost response is reconciled against reservation status; an unknown outcome remains pending and is retried safely. Only a confirmed release permits a new order. Downloads remain available through the Wallet entitlement even if the final local receipt update needs a retry.
+Customers pay by card or with Ixis. Ixis still redeems from the shared Apixis Wallet, which remains the source of truth for the Ixis balance. Launchixis stores no local Ixis balance. Card checkout uses one Stripe account (Apixis Dev LLC) and stays off until `STRIPE_PRICE_LAUNCHIXIS_CHECKLIST` (and the other `STRIPE_PRICE_LAUNCHIXIS_*` names) plus a Stripe key and webhook secret are set. The deliverable is persisted before capture. A partial unique index gives each customer only one pending/captured checklist order. Concurrent requests reuse it and the same Wallet idempotency key. A lost response is reconciled against reservation status; an unknown outcome remains pending and is retried safely. Only a confirmed release permits a new order. Downloads remain available through the Wallet entitlement even if the final local receipt update needs a retry.
 
 ## Checks
 

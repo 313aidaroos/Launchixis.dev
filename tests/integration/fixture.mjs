@@ -13,7 +13,7 @@ export function sessionCookie(user) {
 }
 export async function fixtureServer() {
   const state={ paid:new Set(), holds:new Map(), charges:0, unavailable:false, failCaptureResponse:false,
-    tables:{ launches:[{id:'30000000-0000-4000-8000-000000000001',slug:'internal',name:'Internal company',one_liner:'Internal plan',domain:'',repo:'',vercel_project:'',owner_id:null,version:1,status:'active',notes:'CONFIDENTIAL_INTERNAL_NOTE',items:emptyItems()}], support_tickets:[], launch_orders:[] } };
+    tables:{ launches:[{id:'30000000-0000-4000-8000-000000000001',slug:'internal',name:'Internal company',one_liner:'Internal plan',domain:'',repo:'',vercel_project:'',owner_id:null,version:1,status:'active',notes:'CONFIDENTIAL_INTERNAL_NOTE',items:emptyItems()}], support_tickets:[], launch_orders:[], purchase_ledger:[] } };
   const server=http.createServer(async(req,res)=>{
     const url=new URL(req.url,'http://localhost');let raw='';for await (const chunk of req) raw+=chunk;
     let body={};try{body=JSON.parse(raw||'{}');}catch{}
