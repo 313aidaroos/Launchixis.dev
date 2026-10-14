@@ -139,5 +139,5 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 
 ## 2026-10-14 (CT) — Grok (Launchixis Lead): launch readiness doc
 - What/where: docs/LAUNCH_READINESS_2027-01-01.md (done / to do with owner / needs Awad). Docs only.
-- Who: Grok (Launchixis Lead), for Awad via hub bot.
+- Who: Grok (Launchixis Lead) via CloudAgent.
 - Undo: `git revert` the squash commit of branch `grok/launch-readiness-2027-01-01`.
