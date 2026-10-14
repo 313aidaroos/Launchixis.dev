@@ -142,7 +142,13 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 - Who: Grok (Launchixis Lead) via CloudAgent.
 - Undo: `git revert` the squash commit of branch `grok/launch-readiness-2027-01-01`.
 
+## 2026-10-14 (CT) — Grok (Launchixis Lead): Footer 'Other Ixis companies' (13 links, all HTTP 200 on 10-14; Recovra omitted: recovra-three.vercel.app returns 404) + nav icons SVG→text glyphs (no-SVG lock)
+- What/where: components/StudioShell.jsx, app/studio.css; the 9 inline <svg> on /companies were the StudioShell nav icons
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Link re-check 2026-10-14: all 13 footer URLs returned HTTP 200. Recovra (`https://recovra-three.vercel.app`) still returns 404 and stays omitted. No other dead links to drop.
+- Undo: `git revert` the squash commit of branch `grok/footer-ixis-companies-no-svg`.
+
 ## 2026-10-14 (CT) — Grok (Launchixis Lead): repo cleanups from Claude list
-- What/where: removed archive/landing-pack.html (unreferenced); README checks + payment rules section. typescript/@types/node already in devDependencies (verified, no change). supabase/schema.sql NOT added: needs a live schema dump; the repo now has supabase/migrations/20261006013826_customer_workspaces.sql.
+- What/where: removed archive/landing-pack.html (unreferenced); README checks + payment rules section (Apixis ID, Ixis through the Wallet, and card-or-Ixis staying off until Stripe price ids are set). typescript/@types/node already in devDependencies (verified, no change). supabase/schema.sql NOT added: needs a live schema dump; the repo now has supabase/migrations/20261006013826_customer_workspaces.sql.
 - Who: Grok (Launchixis Lead) via CloudAgent.
 - Undo: `git revert` the squash commit of branch `grok/cleanups-claude-list`.

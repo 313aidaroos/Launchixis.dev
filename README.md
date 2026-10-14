@@ -65,4 +65,4 @@ For a manual browser review with fake local accounts after building: `node tests
 
 ## Payments (rules)
 
-New accounts only through Apixis ID (Wallet SSO); existing email accounts may use a magic link; no password signup. Purchases are paid in Ixis through the shared Apixis Wallet (reserve → capture). Card checkout is not enabled: no Launchixis card prices are set.
+New accounts only through Apixis ID (Wallet SSO); existing email accounts may use a magic link; no password signup. Customers pay by card or with Ixis. Ixis purchases use the shared Apixis Wallet (reserve → capture). Card checkout uses one Stripe account (Apixis Dev LLC), one price per product, and stays off until `STRIPE_PRICE_LAUNCHIXIS_CHECKLIST` (and the other `STRIPE_PRICE_LAUNCHIXIS_*` names), a Stripe key, and `STRIPE_WEBHOOK_SECRET` are set. No Launchixis card prices are set yet.
