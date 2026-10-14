@@ -136,3 +136,8 @@ Recorded by Grok (Developer Bot, notes and status sync at 9:25 PM CT). Every cha
 Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5). Each change below either has its own detailed entry earlier in this file (written by whoever made it) or is described here. Commits under the shared `313aidaroos` account were made by the bot or lead named in the detailed entry. Every production deployment for this repo was Ready at the time of this sync. Text only, no code or settings changed.
 
 - Oct 4 10:29 PM, PR #24, `4cb5140`: Apixis ID is the only way to create a Launchixis account. Undo: `git revert 4cb5140` on `main`, then redeploy production.
+
+## 2026-10-14 (CT) — Grok (Launchixis Lead): launch readiness doc
+- What/where: docs/LAUNCH_READINESS_2027-01-01.md (done / to do with owner / needs Awad). Docs only.
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Undo: `git revert` the squash commit of branch `grok/launch-readiness-2027-01-01`.
