@@ -141,3 +141,8 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 - What/where: docs/LAUNCH_READINESS_2027-01-01.md (done / to do with owner / needs Awad). Docs only.
 - Who: Grok (Launchixis Lead) via CloudAgent.
 - Undo: `git revert` the squash commit of branch `grok/launch-readiness-2027-01-01`.
+
+## 2026-10-14 (CT) — Grok (Launchixis Lead): Footer 'Other Ixis companies' (13 links, all HTTP 200 on 10-14; Recovra omitted: recovra-three.vercel.app returns 404) + nav icons SVG→text glyphs (no-SVG lock)
+- What/where: components/StudioShell.jsx, app/studio.css; the 9 inline <svg> on /companies were the StudioShell nav icons
+- Who: Grok (Launchixis Lead), for Awad via hub bot.
+- Undo: `git revert` the squash commit of branch `grok/footer-ixis-companies-no-svg`.

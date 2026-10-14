@@ -9,9 +9,24 @@ const links = [
   ["Apixis Companies", "/companies", "grid"], ["Community", "/feed", "people"],
   ["Pricing", "/pricing", "wallet"], ["Support", "/support", "help"],
 ];
+const ixisCompanies = [
+  ["Apixis", "https://www.apixis.dev"],
+  ["Apixis Wallet", "https://apixis-wallet.vercel.app"],
+  ["Socixis", "https://socixis.dev"],
+  ["Lyrixis", "https://lyrixis.vercel.app"],
+  ["Pinixis", "https://pinixis.vercel.app"],
+  ["Renoxis", "https://renoxis.dev"],
+  ["Contraxis", "https://contraxis-dev.vercel.app"],
+  ["Deduxis", "https://deduxis.vercel.app"],
+  ["Rawixis", "https://rawixis.vercel.app"],
+  ["Halaxis", "https://halaxis.vercel.app"],
+  ["Geoxis", "https://spatial-dashboard-xi.vercel.app"],
+  ["Ominix", "https://ominix-app.vercel.app"],
+  ["Wattixis", "https://wattixis.vercel.app"],
+];
 export function Icon({ name }) {
-  const paths = { home:"m3 10 9-7 9 7v10H3Zm6 10v-7h6v7", launch:"M5 18 7 9l10-5 3 3-5 10-9 2Zm5-5 3 3M4 20l3-1", check:"M4 4h16v16H4Zm4 8 3 3 6-7", file:"M5 3h9l5 5v13H5Zm9 0v6h5M9 13h6m-6 4h6", grid:"M3 3h7v7H3Zm11 0h7v7h-7ZM3 14h7v7H3Zm11 0h7v7h-7Z", people:"M15 21v-3a6 6 0 0 0-12 0v3m14-9a5 5 0 0 1 4 5v4M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8 0a4 4 0 0 1 0 8", wallet:"M3 6h17v14H3Zm0 0V3h14v3m-2 6h6v4h-6Z", help:"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm-3 6a3 3 0 0 1 6 0c0 2-3 2-3 5m0 3v.1" };
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={paths[name] || paths.home}/></svg>;
+  const glyphs = { home:"⌂", launch:"🚀", check:"✓", file:"📄", grid:"▦", people:"👥", wallet:"💳", help:"?" };
+  return <span className="nav-glyph" aria-hidden="true">{glyphs[name] || glyphs.home}</span>;
 }
 export default function StudioShell({ children }) {
   const pathname = usePathname();
@@ -40,7 +55,7 @@ export default function StudioShell({ children }) {
       <header className="studio-topbar"><span className="eyebrow">Your launch studio</span><div className="row">{session?.user&&<ApixisWalletChip/>}{session?.user?<button className="account-button" onClick={signOut}>Sign out</button>:<a className="account-button" href="/login">Sign in</a>}</div></header>
       {error&&<p className="err" role="alert">{error}</p>}
       <div id="main-content" tabIndex={-1}>{children}</div>
-      <footer className="studio-footer"><span>Launchixis · A Apixis Company</span><a href="/support">A little help, whenever you need it ↗</a></footer>
+      <footer className="studio-footer"><span>Launchixis · An Apixis Company</span><a href="/support">A little help, whenever you need it ↗</a><nav className="ixis-companies" aria-label="Other Ixis companies"><strong>Other Ixis companies</strong>{ixisCompanies.map(([n, u]) => <a key={u} href={u} target="_blank" rel="noopener noreferrer">{n}</a>)}</nav></footer>
     </div>
   </div>;
 }

@@ -20,3 +20,9 @@ html{scroll-behavior:smooth;scroll-padding-top:90px}body{font-family:'DM Sans',A
 .pearl .focus-panel .btn.ghost{color:#f5f8ff;border-color:#8796c5}
 
 @media(max-width:800px){.studio-sidebar{position:sticky;top:0;max-height:90dvh;overflow-y:auto}.studio-topbar .eyebrow{max-width:none}}
+
+/* Other Ixis companies footer + text nav glyphs (no SVG) */
+.studio-footer { flex-wrap: wrap; }
+.studio-footer .ixis-companies { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: .4rem .9rem; font-size: .85rem; }
+.studio-footer .ixis-companies strong { margin-right: .4rem; }
+.nav-glyph { display: inline-flex; width: 1.25em; justify-content: center; line-height: 1; }
