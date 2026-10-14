@@ -144,5 +144,5 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 
 ## 2026-10-14 (CT) — Grok (Launchixis Lead): repo cleanups from Claude list
 - What/where: removed archive/landing-pack.html (unreferenced); README checks + payment rules section. typescript/@types/node already in devDependencies (verified, no change). supabase/schema.sql NOT added: needs a live schema dump; the repo now has supabase/migrations/20261006013826_customer_workspaces.sql.
-- Who: Grok (Launchixis Lead), for Awad via hub bot.
+- Who: Grok (Launchixis Lead) via CloudAgent.
 - Undo: `git revert` the squash commit of branch `grok/cleanups-claude-list`.
