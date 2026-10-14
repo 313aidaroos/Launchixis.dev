@@ -23,6 +23,12 @@ test('database protects private records, enforces unique workspaces/orders, vers
     await assert.rejects(db.query(insertOrder,[uid]), /unique/);
     await db.exec("update launch_orders set status='released'");
     await db.query(insertOrder,[uid]);
+    await db.query("insert into launch_orders(id,user_id,attempt_id,product_key,content,template_version) values(gen_random_uuid(),$1,gen_random_uuid(),'launchixis.ops.seat',repeat('seat',40),1)",[uid]);
+    await assert.rejects(db.query("insert into launch_orders(id,user_id,attempt_id,product_key,content,template_version) values(gen_random_uuid(),$1,gen_random_uuid(),'not-a-sku',repeat('nope',40),1)",[uid]), /check/);
+    const orderId=(await db.query("select id from launch_orders where product_key='launchixis.template.checklist' and status='captured'")).rows[0]?.id
+      || (await db.query("select id from launch_orders limit 1")).rows[0].id;
+    await db.query("insert into purchase_ledger(id,order_id,user_id,product_key,method,receipt_id,amount_label,entry_kind,stripe_event_id) values(gen_random_uuid(),$1,$2,'launchixis.template.checklist','card','pi_test','Card · checklist','purchase','evt_test')",[orderId, uid]);
+    await assert.rejects(db.query("insert into purchase_ledger(id,order_id,user_id,product_key,method,receipt_id,amount_label,entry_kind,stripe_event_id) values(gen_random_uuid(),$1,$2,'launchixis.template.checklist','card','pi_test','Card · checklist','purchase','evt_other')",[orderId, uid]), /unique|duplicate/);
     await db.exec('set role service_role');
     for(let i=0;i<4;i++) assert.equal((await db.query('select consume_rate_limit($1,3,600) as ok',['a'.repeat(64)])).rows[0].ok,i<3);
     await db.exec("update request_limits set expires_at=now()-interval '1 second'");
@@ -30,7 +36,7 @@ test('database protects private records, enforces unique workspaces/orders, vers
     await db.exec('reset role');
     for(const role of ['anon','authenticated']) {
       await db.exec(`set role ${role}`);
-      for(const table of ['launches','support_tickets','launch_orders','request_limits']) await assert.rejects(db.query(`select * from ${table}`), /permission denied/);
+      for(const table of ['launches','support_tickets','launch_orders','request_limits','purchase_ledger']) await assert.rejects(db.query(`select * from ${table}`), /permission denied/);
       await assert.rejects(db.query('select consume_rate_limit($1,3,600)',['b'.repeat(64)]), /permission denied/);
       await db.exec('reset role');
     }

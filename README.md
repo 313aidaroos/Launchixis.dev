@@ -38,7 +38,7 @@ For a fresh database, apply `scripts/schema.sql`, then every file in `supabase/m
 
 ## Purchase guarantees
 
-The shared Wallet is the source of truth for balance and entitlement. Launchixis stores no local Ixis balance. The deliverable is persisted before capture. A partial unique index gives each customer only one pending/captured checklist order. Concurrent requests reuse it and the same Wallet idempotency key. A lost response is reconciled against reservation status; an unknown outcome remains pending and is retried safely. Only a confirmed release permits a new order. Downloads remain available through the Wallet entitlement even if the final local receipt update needs a retry.
+Customers pay by card or with Ixis. Ixis still redeems from the shared Apixis Wallet, which remains the source of truth for the Ixis balance. Launchixis stores no local Ixis balance. Card checkout uses one Stripe account (Apixis Dev LLC) and stays off until `STRIPE_PRICE_LAUNCHIXIS_CHECKLIST` (and the other `STRIPE_PRICE_LAUNCHIXIS_*` names) plus a Stripe key and webhook secret are set. The deliverable is persisted before capture. A partial unique index gives each customer only one pending/captured checklist order. Concurrent requests reuse it and the same Wallet idempotency key. A lost response is reconciled against reservation status; an unknown outcome remains pending and is retried safely. Only a confirmed release permits a new order. Downloads remain available through the Wallet entitlement even if the final local receipt update needs a retry.
 
 ## Checks
 
@@ -58,3 +58,11 @@ For a manual browser review with fake local accounts after building: `node tests
 - Field saves carry a version number. A 409 means another session changed the record; review/reload and reapply your edits.
 - Rate limiting is stored in Supabase and shared across server instances. If it is unavailable, protected costly/public write routes return 503.
 - Roll back application code using the previous Vercel deployment if necessary. The database migration is additive and can remain in place. Rolling back to the old app re-exposes the old public board, so prefer a forward fix for privacy issues.
+
+## Checks
+
+`npm run check` runs lint, typecheck, unit + SQL tests, build and integration tests (Node >= 22.18).
+
+## Payments (rules)
+
+New accounts only through Apixis ID (Wallet SSO); existing email accounts may use a magic link; no password signup. Customers pay by card or with Ixis. Ixis purchases use the shared Apixis Wallet (reserve → capture). Card checkout uses one Stripe account (Apixis Dev LLC), one price per product, and stays off until `STRIPE_PRICE_LAUNCHIXIS_CHECKLIST` (and the other `STRIPE_PRICE_LAUNCHIXIS_*` names), a Stripe key, and `STRIPE_WEBHOOK_SECRET` are set. No Launchixis card prices are set yet.

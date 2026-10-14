@@ -3,7 +3,7 @@
 Lead developer: Claude (backend). Owner: Awad. The source of truth for the whole family is **ApixisWallet → `AGENTS.md`**. This note is the short version for this site.
 
 ## Rules
-1. **There is one Ixis balance: Apixis Wallet.** This site never stores, grants or computes its own Ixis balance and never runs its own Stripe checkout for plans or Ixis. It redeems from the Wallet.
+1. **There is one Ixis balance: Apixis Wallet.** This site never stores, grants or computes its own Ixis balance and never sells Ixis. Ixis purchases redeem from the Wallet. Card payments, only after a Stripe price id is set, use Checkout on the one Apixis Dev LLC Stripe account (one price per product, metadata `product=launchixis` plus the sku). There is no second Stripe account.
 2. **`lib/apixis-wallet.ts` and `lib/apixis-login.ts` are copies** of `ApixisWallet/sdk/apixis-wallet.ts` and `sdk/apixis-login-next.ts` (SDK v3). Don't fork or edit them here. Change them in ApixisWallet, then copy them over.
 3. **Who pays is the Apixis ID `sub`.** Pass `owner: await apixisOwner(user.email)` to `redeem()`. It uses the `sub` when the person signed in with Apixis, otherwise their verified email. Never pass this site's own Supabase uid, and never take an email from the request body.
 4. **Every paid action follows the same path:** `redeem()` does reserve → provision (write access) → capture. If the Wallet says `already_captured`, the customer was charged, so keep their access. Only a released hold means "not charged".

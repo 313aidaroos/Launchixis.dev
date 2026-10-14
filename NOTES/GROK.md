@@ -141,3 +141,26 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 - What/where: docs/LAUNCH_READINESS_2027-01-01.md (done / to do with owner / needs Awad). Docs only.
 - Who: Grok (Launchixis Lead) via CloudAgent.
 - Undo: `git revert` the squash commit of branch `grok/launch-readiness-2027-01-01`.
+
+## 2026-10-14 (CT) — Grok (Launchixis Lead): Footer 'Other Ixis companies' (13 links, all HTTP 200 on 10-14; Recovra omitted: recovra-three.vercel.app returns 404) + nav icons SVG→text glyphs (no-SVG lock)
+- What/where: components/StudioShell.jsx, app/studio.css; the 9 inline <svg> on /companies were the StudioShell nav icons
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Link re-check 2026-10-14: all 13 footer URLs returned HTTP 200. Recovra (`https://recovra-three.vercel.app`) still returns 404 and stays omitted. No other dead links to drop.
+- Undo: `git revert` the squash commit of branch `grok/footer-ixis-companies-no-svg`.
+
+## 2026-10-14 (CT) — Grok (Launchixis Lead): repo cleanups from Claude list
+- What/where: removed archive/landing-pack.html (unreferenced); README checks + payment rules section (Apixis ID, Ixis through the Wallet, and card-or-Ixis staying off until Stripe price ids are set). typescript/@types/node already in devDependencies (verified, no change). supabase/schema.sql NOT added: needs a live schema dump; the repo now has supabase/migrations/20261006013826_customer_workspaces.sql.
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Undo: `git revert` the squash commit of branch `grok/cleanups-claude-list`.
+
+## 2026-10-14 (CT) — Grok (Launchixis Lead): card or Ixis checkout
+- What: Customers pay by card (Stripe Checkout) or Ixis (existing Wallet reserve/capture). One Stripe account, Apixis Dev LLC. Each sku has its own price id from env. Metadata on the Checkout Session, PaymentIntent or Subscription, and the required Price metadata, is `product=launchixis` plus the sku. Subscriptions (Launch Ops Seat, Enterprise Launch Suite) use Stripe `mode=subscription`. A paid, signature-verified webhook fulfills through the same order claim / provision / capture path as Ixis, then writes `purchase_ledger`. Ixis capture writes that ledger too. Receipts are `GET /api/receipts`. Card buttons on `/pricing` stay disabled until the price env and a Stripe key are both set. New accounts stay Apixis ID only. Theme unchanged.
+- Where: `lib/catalog.js`, `lib/card-checkout.js`, `lib/purchase-service.js`, `lib/purchase-store.js`, `lib/product-access.js`, `lib/steps.js`, `lib/cixy.js`, `app/api/checkout/route.js`, `app/api/stripe/webhook/route.js`, `app/api/receipts/route.js`, `app/api/product/route.js`, `app/pricing/page.jsx`, `supabase/migrations/20261014213000_card_or_ixis_ledger.sql`, `.env.example`, `tests/checkout.test.mjs`.
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Undo: `git revert` the squash commit of branch `grok/card-or-ixis-checkout`. Do not apply the migration on production until Awad says yes. Card prices were not created.
+
+## 2026-10-14 (CT) — Grok (Launchixis Lead): combined launch-prep branch
+- What/where: `grok/launch-prep-combined` carries #32 (footer, nav text glyphs), #33 (remove archive/landing-pack.html, README), and #34 (card or Ixis). NOTES and the changelog keep every entry. README keeps the card-or-Ixis purchase paragraph and the checks/payments section.
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Not done: migration `20261014213000_card_or_ixis_ledger.sql` is in the branch and was not applied. No env values were set or changed.
+- Undo: close the combined PR without merging.
