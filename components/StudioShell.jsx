@@ -11,18 +11,19 @@ const links = [
 ];
 const ixisCompanies = [
   ["Apixis", "https://www.apixis.dev"],
-  ["Apixis Wallet", "https://apixis-wallet.vercel.app"],
+  ["Apixis Wallet", "https://wallet.apixis.dev"],
   ["Socixis", "https://socixis.dev"],
   ["Lyrixis", "https://lyrixis.apixis.dev"],
-  ["Pinixis", "https://pinixis.vercel.app"],
+  ["Pinixis", "https://pinixis.dev"],
   ["Renoxis", "https://renoxis.dev"],
-  ["Contraxis", "https://contraxis-dev.vercel.app"],
+  ["Contraxis", "https://contraxis.dev"],
   ["Deduxis", "https://deduxis.apixis.dev"],
-  ["Rawixis", "https://rawixis.vercel.app"],
+  ["Rawixis", "https://rawixis.dev"],
   ["Halaxis", "https://halaxis.apixis.dev"],
   ["Geoxis", "https://geoxis.apixis.dev"],
-  ["Ominix", "https://ominixis.apixis.dev"],
+  ["Ominixis", "https://ominixis.apixis.dev"],
   ["Wattixis", "https://wattixis.apixis.dev"],
+  ["Newsxis", "https://newsxis.apixis.dev"],
 ];
 export function Icon({ name }) {
   const glyphs = { home:"⌂", launch:"🚀", check:"✓", file:"📄", grid:"▦", people:"👥", wallet:"💳", help:"?" };
