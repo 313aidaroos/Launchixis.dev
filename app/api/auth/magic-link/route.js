@@ -8,7 +8,7 @@ import { isValidEmail, normalizeEmail } from "../../../../lib/auth.js";
 export const dynamic = "force-dynamic";
 
 function appUrl() {
-  return process.env.APP_URL || "https://launchixis.vercel.app";
+  return process.env.APP_URL || "https://launchixis.apixis.dev";
 }
 
 export async function POST(request) {

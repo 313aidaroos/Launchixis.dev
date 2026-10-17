@@ -13,16 +13,16 @@ const ixisCompanies = [
   ["Apixis", "https://www.apixis.dev"],
   ["Apixis Wallet", "https://apixis-wallet.vercel.app"],
   ["Socixis", "https://socixis.dev"],
-  ["Lyrixis", "https://lyrixis.vercel.app"],
+  ["Lyrixis", "https://lyrixis.apixis.dev"],
   ["Pinixis", "https://pinixis.vercel.app"],
   ["Renoxis", "https://renoxis.dev"],
   ["Contraxis", "https://contraxis-dev.vercel.app"],
-  ["Deduxis", "https://deduxis.vercel.app"],
+  ["Deduxis", "https://deduxis.apixis.dev"],
   ["Rawixis", "https://rawixis.vercel.app"],
-  ["Halaxis", "https://halaxis.vercel.app"],
-  ["Geoxis", "https://spatial-dashboard-xi.vercel.app"],
-  ["Ominix", "https://ominix-app.vercel.app"],
-  ["Wattixis", "https://wattixis.vercel.app"],
+  ["Halaxis", "https://halaxis.apixis.dev"],
+  ["Geoxis", "https://geoxis.apixis.dev"],
+  ["Ominix", "https://ominixis.apixis.dev"],
+  ["Wattixis", "https://wattixis.apixis.dev"],
 ];
 export function Icon({ name }) {
   const glyphs = { home:"⌂", launch:"🚀", check:"✓", file:"📄", grid:"▦", people:"👥", wallet:"💳", help:"?" };
