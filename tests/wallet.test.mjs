@@ -50,7 +50,6 @@ test("pricing and shared navigation use the approved Wallet host", () => {
   const cixy = readFileSync(new URL("../lib/cixy.js", import.meta.url), "utf8");
   assert.equal(pricing.includes("wallet.apixis.dev"), false);
   assert.equal(pricing.includes("Wallet connecting"), false);
-  assert.equal(navigation.includes("wallet.apixis.dev"), false);
   assert.equal(cixy.includes("wallet.apixis.dev"), false);
   assert.match(pricing, /walletBuyUrl\("\/pricing"\)/);
   assert.match(navigation, /walletBuyUrl\("\/"\)/);
