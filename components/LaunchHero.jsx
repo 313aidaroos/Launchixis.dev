@@ -4,7 +4,7 @@ export function AskCixy({ children = "Talk to Cixy ↗", className = "btn cyan" 
 }
 export default function LaunchHero({ signedIn = false }) {
   return <section className="launch-hero" aria-labelledby="hero-title">
-    <img className="hero-art" src="/brand/cixy-studio.webp" alt="Cixy, your launch assistant, in her colorful studio" fetchPriority="high" width="1536" height="864"/>
+    <img className="hero-art" src="/cixy/cixy-launchixis.webp" alt="Cixy, your launch assistant, at her desk" fetchPriority="high" width="1024" height="1024"/>
     <div className="hero-copy"><p className="eyebrow"><span className="live-dot"/> Every great company starts somewhere</p>
       <h1 id="hero-title">Your idea.<br/>A clear direction.<br/>An extraordinary <em>launch.</em></h1>
       <p className="hero-description">One private workspace to plan, build, and bring your next company to life.</p>

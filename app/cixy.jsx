@@ -77,7 +77,7 @@ export default function Cixy() {
         aria-controls="cixy-chat"
         aria-label="Toggle Cixy chat"
       >
-        <img src="/brand/cixy-avatar.webp" alt=""/><span>{open ? "Close Cixy" : "Ask Cixy"}</span>
+        <img src="/cixy/cixy-launchixis-avatar.webp" alt=""/><span>{open ? "Close Cixy" : "Ask Cixy"}</span>
       </button>
 
       {open && (
