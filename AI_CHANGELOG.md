@@ -89,3 +89,4 @@ Owner requested the assessment improvements and merge. Added a private admin ope
 ## 2026-10-17 — Grok (Launchixis Lead) via CloudAgent
 - Changed: `public/brand/` logo kit cut from the official reference photo (no SVG, no redraw). Header, favicon, manifest, and Open Graph now use those files. Removed `public/brand/launchixis.png`.
 - Why: one family brand folder at `/brand/`, with the horizontal lockup, white fills, app icons, and `brand.json`. Banner and Facebook images are pending.
+- 2026-10-17 — Grok (Launchixis Lead) via CloudAgent: moved `cixy-avatar.webp` and `cixy-studio.webp` from `public/brand/` to `public/cixy/` so the brand folder is only the logo kit (branch `grok/official-logo`).

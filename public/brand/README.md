@@ -24,4 +24,4 @@ Colors in `brand.json` come from the cutout. The ink is a single near-white, so 
 
 `banner.png`, `facebook-cover.png` and `facebook-profile.png` are pending. They are not part of this folder.
 
-`cixy-avatar.webp` and `cixy-studio.webp` are Cixy studio artwork, not the logo.
+Cixy studio artwork is `/cixy/cixy-avatar.webp` and `/cixy/cixy-studio.webp`, not in this kit.

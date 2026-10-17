@@ -180,3 +180,10 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 - Who: Grok (Launchixis Lead) via CloudAgent.
 - Not done: no SVG, no redraw, no merge. The mark above the wordmark in the photo sits on a near-white part of the scene and was not separable, so the icon is the left glyph of the horizontal lockup.
 - Undo: `git revert` the commit on branch `grok/official-logo`.
+
+## 2026-10-17 (CT) — Grok (Launchixis Lead): Cixy art out of the brand kit
+- What: Moved `cixy-avatar.webp` and `cixy-studio.webp` from `public/brand/` to `public/cixy/` (same names). Header Cixy art and the Cixy button now load `/cixy/…`. `public/brand/` is only the logo kit. `brand.json` never listed these files.
+- Where: `public/cixy/`, `app/cixy.jsx`, `components/LaunchHero.jsx`, `public/brand/README.md`.
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Not done: no merge, PR stays draft.
+- Undo: `git revert` the commit on branch `grok/official-logo`.
