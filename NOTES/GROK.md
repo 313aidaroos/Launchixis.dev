@@ -164,3 +164,12 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 - Who: Grok (Launchixis Lead) via CloudAgent.
 - Not done: migration `20261014213000_card_or_ixis_ledger.sql` is in the branch and was not applied. No env values were set or changed.
 - Undo: close the combined PR without merging.
+
+## 2026-10-17 (CT) — Grok (Launchixis Lead): schema record, world clients, purchase smoke
+- What: `supabase/schema.sql` is a schema-only record of the public tables. `lib/apixis-world.ts` lists the clients Apixis.dev accepts as `from`, including `aidaroosholding` and `pinixis`, and still says 1,000 starter Ixis. `scripts/smoke-purchase.mjs` (`npm run smoke:purchase`) checks Ixis checkout against a fake Wallet, card checkout disabled when price env is unset, and a receipt plus `purchase_ledger` row in test mode.
+- Where: `supabase/schema.sql`, `lib/apixis-world.ts`, `tests/apixis-world.test.mjs`, `scripts/smoke-purchase.mjs`, `package.json`, `eslint.config.mjs`.
+- Schema method: rebuilt from `scripts/schema.sql` plus `supabase/migrations/` in filename order. No database credentials were available, so this is not a live introspection. The file was not applied to any project.
+- World kit: `313aidaroos/Apixis.dev` is private to this checkout. The allowlist was taken from the live canonical module `https://www.apixis.dev/js/apixis-clients.js` (the list the `/enter` server validates). The helper keeps the family `enterApixisUrl` shape and the 1,000 starter Ixis sentence. Launchixis had no `lib/apixis-world-agent.ts`, so there was no stale agent file to replace.
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Not done: no migration applied, no env or Stripe values changed, no email sent.
+- Undo: `git revert` the commit on branch `grok/launch-prep-2`.
