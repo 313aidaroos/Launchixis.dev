@@ -42,7 +42,7 @@ export default function StudioShell({ children }) {
   return <div className="studio-app">
     <a className="skip-link" href="#main-content">Skip to content</a>
     <aside className="studio-sidebar">
-      <a className="brand" href="/" aria-label="Launchixis home"><img src="/brand/launchixis.png" alt="Launchixis" width="200" height="168" /></a>
+      <a className="brand" href="/" aria-label="Launchixis home"><img src="/brand/logo-full-white.png" alt="Launchixis" width="1056" height="153" /></a>
       <button className="menu-toggle btn ghost" aria-expanded={menu} aria-controls="studio-nav" onClick={()=>setMenu(!menu)}>{menu?"Close menu":"Menu ☰"}</button>
       <nav id="studio-nav" className={menu?"studio-nav is-open":"studio-nav"} aria-label="Main navigation">
         {links.map(([label,href,icon])=><a key={label} href={href} aria-current={current===href?"page":undefined} onClick={()=>setMenu(false)}><Icon name={icon}/><span>{label}</span></a>)}
