@@ -173,3 +173,10 @@ Recorded by Grok (Developer Bot, notes and status sync at 12:25 AM CT on Oct 5).
 - Who: Grok (Launchixis Lead) via CloudAgent.
 - Not done: no migration applied, no env or Stripe values changed, no email sent.
 - Undo: `git revert` the commit on branch `grok/launch-prep-2`.
+
+## 2026-10-17 (CT) — Grok (Launchixis Lead): official logo kit
+- What: Cut the Launchixis lockup out of the official reference photo into `public/brand/`. `logo-full.png` is the horizontal lockup (mark left, name right). `logo-full-white.png` and `mark-white.png` are the same alpha filled with pure white. The native lockup is 590×70 and the mark is 66×67, so both were scaled up with Lanczos only (about 1.74× and 7.6×). Header uses `logo-full-white.png`. Favicon, apple touch, manifest icons, and the Open Graph image use this kit. `brand.json` holds the sampled ink color `#FCFAF9` and the file list. `banner.png`, `facebook-cover.png`, and `facebook-profile.png` are not in this kit.
+- Where: `public/brand/`, `app/layout.jsx`, `app/manifest.js`, `app/studio.css`, `components/StudioShell.jsx`. Deleted `public/brand/launchixis.png`.
+- Who: Grok (Launchixis Lead) via CloudAgent.
+- Not done: no SVG, no redraw, no merge. The mark above the wordmark in the photo sits on a near-white part of the scene and was not separable, so the icon is the left glyph of the horizontal lockup.
+- Undo: `git revert` the commit on branch `grok/official-logo`.
