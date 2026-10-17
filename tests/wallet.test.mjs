@@ -19,7 +19,7 @@ test("buy deep link defaults to the pricing return", () => {
 
 test("board can return to the site root", () => {
   assert.equal(walletBuyUrl("/"), HOME_BUY);
-  assert.equal(launchixisReturnUrl("/"), "https://launchixis.vercel.app/");
+  assert.equal(launchixisReturnUrl("/"), "https://launchixis.apixis.dev/");
 });
 
 test("unknown return paths stay on the allowlist", () => {
@@ -34,7 +34,7 @@ test("open wallet keeps origin and return without forcing the buy tab", () => {
   assert.equal(url.searchParams.get("tab"), null);
   assert.equal(
     url.searchParams.get("return_url"),
-    "https://launchixis.vercel.app/pricing"
+    "https://launchixis.apixis.dev/pricing"
   );
 });
 

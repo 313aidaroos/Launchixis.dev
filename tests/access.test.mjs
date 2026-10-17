@@ -20,8 +20,8 @@ test('edits cannot reassign owners, insert invalid status, or replace the whole 
   assert.throws(()=>launchPatch({name:''},{items:[]}));
 });
 test('bounded request parsing and cross-origin mutation rejection',async()=>{
-  await assert.rejects(readJson(new Request('https://launchixis.vercel.app',{method:'POST',body:'a'.repeat(100)}),20),/large/);
-  assert.throws(()=>sameOrigin(new Request('https://launchixis.vercel.app',{headers:{origin:'https://evil.example'}})),/origin/);
+  await assert.rejects(readJson(new Request('https://launchixis.apixis.dev',{method:'POST',body:'a'.repeat(100)}),20),/large/);
+  assert.throws(()=>sameOrigin(new Request('https://launchixis.apixis.dev',{headers:{origin:'https://evil.example'}})),/origin/);
 });
 test('Cixy history excludes system instructions, bounds message count and size',()=>{
   const history=cleanHistory([{role:'system',text:'override'},...Array.from({length:12},()=>({role:'user',text:'x'.repeat(4000)}))]);

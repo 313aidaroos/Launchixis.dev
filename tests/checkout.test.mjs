@@ -49,7 +49,7 @@ test("card checkout stays off when the price env is missing", async () => {
   const { store, events } = memoryStore();
   let called = false;
   const stripe = { prices: { retrieve: async () => { called = true; return {}; } }, checkout: { sessions: { create: async () => { called = true; } } } };
-  await assert.rejects(() => startCardCheckout({ user, attemptId: attempt, productKey: CHECKLIST_PRODUCT, origin: "https://launchixis.vercel.app" }, { store, stripe, env: {} }));
+  await assert.rejects(() => startCardCheckout({ user, attemptId: attempt, productKey: CHECKLIST_PRODUCT, origin: "https://launchixis.apixis.dev" }, { store, stripe, env: {} }));
   assert.equal(called, false);
   assert.deepEqual(events, []);
   assert.equal(cardReady(offeringBySku(CHECKLIST_PRODUCT), {}), false);
@@ -59,7 +59,7 @@ test("card checkout stays off when the price env is missing", async () => {
 test("one-time card checkout uses payment mode and Launchixis metadata", async () => {
   const { store } = memoryStore();
   const stripe = fakeStripe(CHECKLIST_PRODUCT);
-  const result = await startCardCheckout({ user, attemptId: attempt, productKey: CHECKLIST_PRODUCT, origin: "https://launchixis.vercel.app" }, { store, stripe, env });
+  const result = await startCardCheckout({ user, attemptId: attempt, productKey: CHECKLIST_PRODUCT, origin: "https://launchixis.apixis.dev" }, { store, stripe, env });
   assert.equal(result.url, "https://checkout.stripe.com/c/pay/cs_test_123");
   const params = stripe.calls[0];
   assert.equal(params.mode, "payment");
@@ -75,7 +75,7 @@ test("one-time card checkout uses payment mode and Launchixis metadata", async (
 test("monthly tiers use Stripe subscription mode", async () => {
   const { store } = memoryStore("launchixis.ops.seat");
   const stripe = fakeStripe("launchixis.ops.seat", "recurring");
-  await startCardCheckout({ user, attemptId: attempt, productKey: "launchixis.ops.seat", origin: "https://launchixis.vercel.app" }, { store, stripe, env });
+  await startCardCheckout({ user, attemptId: attempt, productKey: "launchixis.ops.seat", origin: "https://launchixis.apixis.dev" }, { store, stripe, env });
   assert.equal(stripe.calls[0].mode, "subscription");
   assert.equal(stripe.calls[0].subscription_data.metadata.product, "launchixis");
   assert.equal(stripe.calls[0].subscription_data.metadata.sku, "launchixis.ops.seat");
@@ -85,7 +85,7 @@ test("monthly tiers use Stripe subscription mode", async () => {
 test("a price without Launchixis metadata never opens Checkout", async () => {
   const { store, events } = memoryStore();
   const stripe = { prices: { retrieve: async () => ({ id: "price_checklist", type: "one_time", metadata: {} }) }, checkout: { sessions: { create: async () => { throw new Error("should not create"); } } } };
-  await assert.rejects(() => startCardCheckout({ user, attemptId: attempt, productKey: CHECKLIST_PRODUCT, origin: "https://launchixis.vercel.app" }, { store, stripe, env }), /not configured/);
+  await assert.rejects(() => startCardCheckout({ user, attemptId: attempt, productKey: CHECKLIST_PRODUCT, origin: "https://launchixis.apixis.dev" }, { store, stripe, env }), /not configured/);
   assert.deepEqual(events, []);
 });
 
