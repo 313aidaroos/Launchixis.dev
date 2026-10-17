@@ -8,9 +8,9 @@ import {
 } from "../lib/wallet.js";
 
 const PRICING_BUY =
-  "https://apixis-wallet.vercel.app?tab=buy&origin=launchixis&return_url=https%3A%2F%2Flaunchixis.vercel.app%2Fpricing";
+  "https://apixis-wallet.vercel.app?tab=buy&origin=launchixis&return_url=https%3A%2F%2Flaunchixis.apixis.dev%2Fpricing";
 const HOME_BUY =
-  "https://apixis-wallet.vercel.app?tab=buy&origin=launchixis&return_url=https%3A%2F%2Flaunchixis.vercel.app%2F";
+  "https://apixis-wallet.vercel.app?tab=buy&origin=launchixis&return_url=https%3A%2F%2Flaunchixis.apixis.dev%2F";
 
 test("buy deep link defaults to the pricing return", () => {
   assert.equal(walletBuyUrl(), PRICING_BUY);
