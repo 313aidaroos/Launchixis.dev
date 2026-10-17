@@ -14,6 +14,7 @@
     "typecheck": "tsc --noEmit",
     "check": "npm run lint && npm run typecheck && npm test && npm run build && npm run test:integration",
     "seed": "node scripts/seed.mjs",
+    "smoke:purchase": "node scripts/smoke-purchase.mjs",
     "test:unit": "node --experimental-strip-types --test tests/*.test.mjs lib/__tests__/*.test.mjs",
     "postbuild": "node scripts/verify-ci.mjs"
   },

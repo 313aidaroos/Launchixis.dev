@@ -84,3 +84,4 @@ Owner requested the assessment improvements and merge. Added a private admin ope
 ## 2026-10-14 — Grok (Launchixis Lead) via CloudAgent
 - Changed: combined footer, cleanups, and card-or-Ixis onto `grok/launch-prep-combined` (supersedes #32, #33, and #34).
 - Why: those three branches conflicted with main after #31 merged. One branch keeps every note, changelog entry, and the README payment section. Migration not applied. Env not changed.
+- 2026-10-17 — Grok (Launchixis Lead) via CloudAgent: schema record, world-client sync (aidaroosholding, 1,000 starter Ixis kept), and a purchase smoke script (branch grok/launch-prep-2). No migration applied. Env not changed.
