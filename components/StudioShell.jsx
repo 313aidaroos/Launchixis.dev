@@ -2,28 +2,13 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ApixisWalletChip } from "./ApixisWalletChip";
+import { IxisCompanies } from "./IxisCompanies";
 import { walletBuyUrl } from "../lib/wallet.js";
 const links = [
   ["Overview", "/", "home"], ["My launch", "/#workspace", "launch"],
   ["My checklist", "/#milestones", "check"], ["Files & notes", "/#notes", "file"],
   ["Apixis Companies", "/companies", "grid"], ["Community", "/feed", "people"],
   ["Pricing", "/pricing", "wallet"], ["Support", "/support", "help"],
-];
-const ixisCompanies = [
-  ["Apixis", "https://www.apixis.dev"],
-  ["Apixis Wallet", "https://wallet.apixis.dev"],
-  ["Socixis", "https://socixis.dev"],
-  ["Lyrixis", "https://lyrixis.apixis.dev"],
-  ["Pinixis", "https://pinixis.dev"],
-  ["Renoxis", "https://renoxis.dev"],
-  ["Contraxis", "https://contraxis.dev"],
-  ["Deduxis", "https://deduxis.apixis.dev"],
-  ["Rawixis", "https://rawixis.dev"],
-  ["Halaxis", "https://halaxis.apixis.dev"],
-  ["Geoxis", "https://geoxis.apixis.dev"],
-  ["Ominixis", "https://ominixis.apixis.dev"],
-  ["Wattixis", "https://wattixis.apixis.dev"],
-  ["Newsxis", "https://newsxis.apixis.dev"],
 ];
 export function Icon({ name }) {
   const glyphs = { home:"⌂", launch:"🚀", check:"✓", file:"📄", grid:"▦", people:"👥", wallet:"💳", help:"?" };
@@ -56,7 +41,7 @@ export default function StudioShell({ children }) {
       <header className="studio-topbar"><span className="eyebrow">Your launch studio</span><div className="row">{session?.user&&<ApixisWalletChip/>}{session?.user?<button className="account-button" onClick={signOut}>Sign out</button>:<a className="account-button" href="/login">Sign in</a>}</div></header>
       {error&&<p className="err" role="alert">{error}</p>}
       <div id="main-content" tabIndex={-1}>{children}</div>
-      <footer className="studio-footer"><span>Launchixis · An Apixis Company</span><a href="/support">A little help, whenever you need it ↗</a><nav className="ixis-companies" aria-label="Other Ixis companies"><strong>Other Ixis companies</strong>{ixisCompanies.map(([n, u]) => <a key={u} href={u} target="_blank" rel="noopener noreferrer">{n}</a>)}</nav></footer>
+      <footer className="studio-footer"><span>Launchixis · An Apixis Company</span><a href="/support">A little help, whenever you need it ↗</a><IxisCompanies current="Launchixis" align="right" /></footer>
     </div>
   </div>;
 }
