@@ -39,7 +39,7 @@ const CSS = `
 .ixis-menu.ixis-menu .ixis-panel li{margin:0;padding:0}
 .ixis-menu.ixis-menu .ixis-panel a,.ixis-menu.ixis-menu .ixis-panel .ixis-here{display:grid;gap:2px;padding:8px;border-radius:10px;color:var(--ixis-fg);text-decoration:none}
 .ixis-menu.ixis-menu .ixis-panel a:hover,.ixis-menu.ixis-menu .ixis-panel a:focus-visible{background:var(--ixis-hover)}
-.ixis-menu.ixis-menu .ixis-panel strong{font-size:13px;font-weight:600;color:var(--ixis-fg)}
+.ixis-menu.ixis-menu .ixis-panel strong{font-family:inherit;letter-spacing:normal;font-size:13px;font-weight:600;color:var(--ixis-fg)}
 .ixis-menu.ixis-menu .ixis-panel .ixis-brief{color:var(--ixis-muted)}
 .ixis-menu.ixis-menu .ixis-panel .ixis-here{background:var(--ixis-hover)}
 .ixis-menu.ixis-menu .ixis-panel .ixis-badge{margin-left:6px;font-size:10px;font-weight:600;color:var(--ixis-accent)}

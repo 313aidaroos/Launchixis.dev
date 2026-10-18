@@ -41,7 +41,7 @@ export default function StudioShell({ children }) {
       <header className="studio-topbar"><span className="eyebrow">Your launch studio</span><div className="row">{session?.user&&<ApixisWalletChip/>}{session?.user?<button className="account-button" onClick={signOut}>Sign out</button>:<a className="account-button" href="/login">Sign in</a>}</div></header>
       {error&&<p className="err" role="alert">{error}</p>}
       <div id="main-content" tabIndex={-1}>{children}</div>
-      <footer className="studio-footer"><span>Launchixis · An Apixis Company</span><a href="/support">A little help, whenever you need it ↗</a><IxisCompanies current="Launchixis" align="right" /></footer>
+      <footer className="studio-footer"><span>Launchixis · An Apixis Company</span><IxisCompanies current="Launchixis" /><a href="/support">A little help, whenever you need it ↗</a></footer>
     </div>
   </div>;
 }
