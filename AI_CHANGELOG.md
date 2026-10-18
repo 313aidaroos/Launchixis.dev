@@ -85,3 +85,8 @@ Owner requested the assessment improvements and merge. Added a private admin ope
 - Changed: combined footer, cleanups, and card-or-Ixis onto `grok/launch-prep-combined` (supersedes #32, #33, and #34).
 - Why: those three branches conflicted with main after #31 merged. One branch keeps every note, changelog entry, and the README payment section. Migration not applied. Env not changed.
 - 2026-10-17 — Grok (Launchixis Lead) via CloudAgent: schema record, world-client sync (aidaroosholding, 1,000 starter Ixis kept), and a purchase smoke script (branch grok/launch-prep-2). No migration applied. Env not changed.
+
+## 2026-10-17 — Grok (Launchixis Lead) via CloudAgent
+- Changed: `public/brand/` logo kit cut from the official reference photo (no SVG, no redraw). Header, favicon, manifest, and Open Graph now use those files. Removed `public/brand/launchixis.png`.
+- Why: one family brand folder at `/brand/`, with the horizontal lockup, white fills, app icons, and `brand.json`. Banner and Facebook images are pending.
+- 2026-10-17 — Grok (Launchixis Lead) via CloudAgent: moved `cixy-avatar.webp` and `cixy-studio.webp` from `public/brand/` to `public/cixy/` so the brand folder is only the logo kit (branch `grok/official-logo`).
